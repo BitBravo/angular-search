@@ -26,11 +26,10 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico"
-            ],
+            "assets": ["src/favicon.ico"],
             "styles": [
               "node_modules/materialize-css/dist/css/materialize.css",
+              "node_modules/@mdi/font/css/materialdesignicons.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -85,16 +84,15 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["tsconfig.app.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     }
   },
-  "defaultProject": "angular-dev-test"
+  "defaultProject": "angular-dev-test",
+  "cli": {
+    "analytics": "fdb52509-c325-482d-9105-833d0e99c7e6"
+  }
 }

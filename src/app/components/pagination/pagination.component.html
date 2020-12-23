@@ -1,0 +1,41 @@
+<ul *ngIf="pageInfo as pages" class="pagination">
+  <li
+    [ngClass]="{ disabled: pages.currentPage === 1 }"
+    class="pagination__page-item first-item"
+  >
+    <a (click)="setPage(1)" class="page-link">
+      <i class="material-icons">skip_previous</i>
+    </a>
+  </li>
+  <li
+    [ngClass]="{ disabled: pages.currentPage === 1 }"
+    class="pagination__page-item previous-item"
+  >
+    <a (click)="setPage(pages.currentPage - 1)" class="page-link">
+      <i class="material-icons">navigate_before</i>
+    </a>
+  </li>
+  <li
+    *ngFor="let page of getVisiblePages(pages) || []"
+    [ngClass]="{ active: pages.currentPage === page }"
+    class="pagination__page-item number-item"
+  >
+    <a (click)="setPage(page)" class="page-link">{{ page }}</a>
+  </li>
+  <li
+    [ngClass]="{ disabled: pages.currentPage === pages.lastPage }"
+    class="pagination__page-item next-item"
+  >
+    <a (click)="setPage(pages.currentPage + 1)" class="page-link">
+      <i class="material-icons">navigate_next</i>
+    </a>
+  </li>
+  <li
+    [ngClass]="{ disabled: pages.currentPage === pages.lastPage }"
+    class="pagination__page-item last-item"
+  >
+    <a (click)="setPage(pages.lastPage)" class="page-link">
+      <i class="material-icons">skip_next</i>
+    </a>
+  </li>
+</ul>

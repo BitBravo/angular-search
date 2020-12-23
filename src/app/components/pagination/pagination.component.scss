@@ -1,0 +1,19 @@
+.pagination {
+  display: flex;
+  list-style: none;
+
+  &__page-item {
+    display: list-item;
+    color: black;
+    font-size: 12px;
+    cursor: pointer;
+
+    &:active {
+      color: white;
+    }
+
+    &:disabled {
+      pointer-events: none;
+    }
+  }
+}

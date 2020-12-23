@@ -1,0 +1,21 @@
+<div
+  class="video_card"
+  *ngIf="cardData"
+  (click)="navigateItem(cardData?.siteUrl || '')"
+>
+  <div class="video_card__image">
+    <img [src]="getParams(cardData, 'image')" alt="" />
+  </div>
+  <div class="video_card__content">
+    <div
+      class="video_card__title"
+      [ngStyle]="{ color: getParams(cardData, 'color') }"
+    >
+      {{ getParams(cardData) }}
+    </div>
+    <div
+      class="video_card__description"
+      [innerHTML]="cardData?.description"
+    ></div>
+  </div>
+</div>
